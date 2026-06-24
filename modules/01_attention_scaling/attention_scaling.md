@@ -198,4 +198,4 @@ The scaling factor $1/\sqrt{d_k}$ is not a design choice; it is the closed-form 
 
 ---
 
-*Module 01: first-principles-ml*
+*Module 01: first-principles-ai*

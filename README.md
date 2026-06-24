@@ -1,4 +1,4 @@
-# first-principles-ml
+# first-principles-ai
 
 ### Under the Hood ML: Dismantling black-box architectures from canvas to code.
 
@@ -8,7 +8,7 @@
 
 Modern deep learning libraries are extraordinarily capable and extraordinarily opaque. A single call to `nn.MultiheadAttention` conceals decades of mathematical reasoning behind an API boundary. This repository exists to tear that boundary down.
 
-`first-principles-ml` is a discipline, not a tutorial. Each module begins with a hand-derived mathematical proof, moves through a visual whiteboard decomposition, and terminates in a runnable PyTorch simulation that **empirically verifies the theory from scratch**; no `transformers`, no `einops`, no black-box abstractions. Every identity you encounter here has been derived from axioms and confirmed on silicon.
+`first-principles-ai` is a discipline, not a tutorial. Each module begins with a hand-derived mathematical proof, moves through a visual whiteboard decomposition, and terminates in a runnable PyTorch simulation that **empirically verifies the theory from scratch**; no `transformers`, no `einops`, no black-box abstractions. Every identity you encounter here has been derived from axioms and confirmed on silicon.
 
 The target audience is researchers, applied scientists, and graduate students who are no longer satisfied with knowing *that* an architecture works. This is for the ones who need to know *why*.
 ---
@@ -26,8 +26,8 @@ The target audience is researchers, applied scientists, and graduate students wh
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Ronak-Pradhan/first-principles-ml.git
-cd first-principles-ml
+git clone https://github.com/Ronak-Pradhan/first-principles-ai.git
+cd first-principles-ai
 ```
 
 ### Create and Activate a Virtual Environment
@@ -62,7 +62,7 @@ Navigate to `modules/01_attention_scaling/attention_scaling.ipynb` to begin.
 ## Repository Structure
 
 ```
-first-principles-ml/
+first-principles-ai/
 │
 ├── modules/
 │   └── 01_attention_scaling/
