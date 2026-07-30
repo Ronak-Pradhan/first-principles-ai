@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updated": "2026-07-29",
+  "updated": "2026-07-30",
   "topics": [
     {
       "id": "01",
       "slug": "attention_scaling",
-      "title": "Attention Scaling Factor Variance Proof (1/√d_k)",
+      "title": "Attention Scaling Factor Variance Proof (1/\u221ad_k)",
       "category": "Transformer Core",
       "era": "foundation",
       "status": {
@@ -161,6 +161,159 @@
       "module_path": null,
       "source": "manual",
       "notes": ""
+    },
+    {
+      "id": "11",
+      "slug": "rope_attention_dynamics",
+      "title": "Self-Attention Dynamics with Rotary Position Embeddings",
+      "category": "Modern Architecture",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.24502",
+      "notes": "Continuous-time spherical attention dynamics under RoPE; arXiv cs.LG."
+    },
+    {
+      "id": "12",
+      "slug": "clock_rope",
+      "title": "ClockRoPE: Random Fourier Rotations for Temporal Modeling",
+      "category": "Modern Architecture",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.26369",
+      "notes": "RoPE frequency schedule beyond log-linear decay."
+    },
+    {
+      "id": "13",
+      "slug": "lora_intruder_threshold",
+      "title": "LoRA Intruder Threshold (Spectral Law for Fine-Tuning)",
+      "category": "Modern Architecture",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.23711",
+      "notes": "Per-layer spectral condition for LoRA intruder singular vectors."
+    },
+    {
+      "id": "14",
+      "slug": "sam_muon_spectral",
+      "title": "SAM and Muon Robustness under the Spectral Norm",
+      "category": "Optimization",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.26001",
+      "notes": "Optimizer geometry: SAM vs Muon under spectral-norm perturbations."
+    },
+    {
+      "id": "15",
+      "slug": "causal_transformer_composition",
+      "title": "Compositional Theory of Causally Masked Transformers",
+      "category": "Transformer Core",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.26988",
+      "notes": "Finite-precision algebraic theory of causal transformer computation."
+    },
+    {
+      "id": "16",
+      "slug": "flow_map_nongradient",
+      "title": "Flow Map Learning via Nongradient Vector Flow",
+      "category": "Generative Models",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.26398",
+      "notes": "Consistency-style flow maps; generative ODE math."
+    },
+    {
+      "id": "17",
+      "slug": "scale_weight_decay",
+      "title": "Scale Weight Decay and Train Better",
+      "category": "Optimization",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.23777",
+      "notes": "Robbins-Monro-inspired scaling of decoupled weight decay."
+    },
+    {
+      "id": "18",
+      "slug": "coulomb_kernel_attention",
+      "title": "Coulomb Particle Model for Learning Kernel Attention",
+      "category": "Transformer Core",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2607.23869",
+      "notes": "Riesz/Coulomb-regularized particles for kernel attention features."
+    },
+    {
+      "id": "19",
+      "slug": "text_diffusion_gemma",
+      "title": "Text Diffusion Architectures (DiffusionGemma)",
+      "category": "Generative Models",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+      "notes": "Block text diffusion vs autoregressive decoding; DeepMind/Google lab post."
     }
   ]
 }
