@@ -11,6 +11,7 @@ Modern deep learning libraries are extraordinarily capable and extraordinarily o
 `first-principles-ai` is a discipline, not a tutorial. Each module begins with a hand-derived mathematical proof, moves through a visual whiteboard decomposition, and terminates in a runnable PyTorch simulation that **empirically verifies the theory from scratch**; no `transformers`, no `einops`, no black-box abstractions. Every identity you encounter here has been derived from axioms and confirmed on silicon.
 
 The target audience is researchers, applied scientists, and graduate students who are no longer satisfied with knowing *that* an architecture works. This is for the ones who need to know *why*.
+
 ---
 
 ## Module Index
@@ -70,6 +71,7 @@ first-principles-ai/
 │       ├── attention_scaling.md          # First-principles mathematical brief
 │       └── attention_scaling.ipynb       # PyTorch empirical verification notebook
 │
+├── backlog/                              # Topic backlog + weekly digest
 ├── .gitignore
 ├── README.md
 └── requirements.txt

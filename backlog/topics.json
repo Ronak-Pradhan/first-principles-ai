@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "updated": "2026-07-29",
+  "topics": [
+    {
+      "id": "01",
+      "slug": "attention_scaling",
+      "title": "Attention Scaling Factor Variance Proof (1/√d_k)",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "status": {
+        "canvas": "completed",
+        "github": "completed",
+        "blog": "wip",
+        "research": "completed"
+      },
+      "module_path": "modules/01_attention_scaling",
+      "source": "manual",
+      "notes": "Three-layer contract complete; portfolio blog in progress."
+    },
+    {
+      "id": "02",
+      "slug": "softmax_jacobian",
+      "title": "Softmax Backpropagation & Full Jacobian Matrix Derivation",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "03",
+      "slug": "focal_loss",
+      "title": "Focal Loss Gradients (Handling Extreme Class Imbalance)",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "04",
+      "slug": "layernorm",
+      "title": "Layer Normalization Forward & Backward Pass",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "05",
+      "slug": "ce_vs_kl",
+      "title": "Cross-Entropy vs KL-Divergence (Equivalency Proof)",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "06",
+      "slug": "weight_decay_vs_l2",
+      "title": "Weight Decay vs L2 Regularization (SGD vs Adam Dynamics)",
+      "category": "Optimization",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "07",
+      "slug": "rmsprop_adam",
+      "title": "RMSProp & Adam Equations (First/Second Moment Bias Fix)",
+      "category": "Optimization",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "08",
+      "slug": "rope",
+      "title": "Rotary Position Embeddings (RoPE) Multi-Dim Derivation",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "09",
+      "slug": "swiglu",
+      "title": "SwiGLU Activation Function & Gated Linear Unit Dynamics",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    },
+    {
+      "id": "10",
+      "slug": "kv_cache",
+      "title": "KV-Cache Memory Footprint Scaling Equation",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": ""
+    }
+  ]
+}

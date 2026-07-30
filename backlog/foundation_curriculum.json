@@ -1,0 +1,468 @@
+{
+  "version": 1,
+  "updated": "2026-07-29",
+  "description": "Curated legacy / high-signal ML math topics. Expand occasionally; weekly digest only gap-ranks uncovered items. Not a trend scraper.",
+  "topics": [
+    {
+      "id": "f01",
+      "title": "Attention scaling factor variance (1/√d_k)",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Explains why raw QKᵀ saturates softmax at production head dims.",
+      "landmark_refs": ["Vaswani et al., Attention Is All You Need, NeurIPS 2017"],
+      "prereq_hints": ["dot product variance", "softmax"],
+      "backlog_slug": "attention_scaling"
+    },
+    {
+      "id": "f02",
+      "title": "Softmax Jacobian and backpropagation",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Full Jacobian diag(p) - ppᵀ is interview- and systems-critical for gradient flow.",
+      "landmark_refs": ["Standard ML calculus; see Goodfellow et al. Deep Learning"],
+      "prereq_hints": ["softmax"],
+      "backlog_slug": "softmax_jacobian"
+    },
+    {
+      "id": "f03",
+      "title": "LayerNorm forward and backward",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Feature-wise norm is the default transformer stabilizer; backward is subtle.",
+      "landmark_refs": ["Ba, Kiros, Hinton, Layer Normalization, 2016"],
+      "prereq_hints": ["batch statistics", "affine parameters"],
+      "backlog_slug": "layernorm"
+    },
+    {
+      "id": "f04",
+      "title": "RMSNorm math vs LayerNorm",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Modern LLMs drop mean-centering; derive cost and gradient differences.",
+      "landmark_refs": ["Zhang & Sennrich, Root Mean Square Layer Normalization, 2019"],
+      "prereq_hints": ["layernorm"]
+    },
+    {
+      "id": "f05",
+      "title": "BatchNorm vs LayerNorm (when each is valid)",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Batch dependence vs token dependence; train/eval mismatch story.",
+      "landmark_refs": ["Ioffe & Szegedy, Batch Normalization, ICML 2015", "Ba et al., Layer Normalization, 2016"],
+      "prereq_hints": ["layernorm"]
+    },
+    {
+      "id": "f06",
+      "title": "Pre-LN vs Post-LN residual signal propagation",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Explains training stability of deep transformers.",
+      "landmark_refs": ["Xiong et al., On Layer Normalization in the Transformer Architecture, ICML 2020"],
+      "prereq_hints": ["layernorm", "residuals"]
+    },
+    {
+      "id": "f07",
+      "title": "Residual connections as identity gradient highways",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "∂L/∂x path through skip connections; depth without vanishing.",
+      "landmark_refs": ["He et al., Deep Residual Learning for Image Recognition, CVPR 2016"],
+      "prereq_hints": ["backprop"]
+    },
+    {
+      "id": "f08",
+      "title": "Causal / attention mask structure",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Additive -inf mask before softmax; autoregressive legality.",
+      "landmark_refs": ["Vaswani et al., Attention Is All You Need, NeurIPS 2017"],
+      "prereq_hints": ["softmax", "attention_scaling"]
+    },
+    {
+      "id": "f09",
+      "title": "Multi-head attention as partitioned subspaces",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Why h heads of d_k = d_model/h preserve compute while adding subspaces.",
+      "landmark_refs": ["Vaswani et al., Attention Is All You Need, NeurIPS 2017"],
+      "prereq_hints": ["attention_scaling"]
+    },
+    {
+      "id": "f10",
+      "title": "Scaled dot-product vs additive attention",
+      "category": "Transformer Core",
+      "era": "foundation",
+      "why": "Complexity and compatibility with packing / Flash kernels.",
+      "landmark_refs": ["Bahdanau et al., Neural Machine Translation by Jointly Learning to Align and Translate, 2015", "Vaswani et al., 2017"],
+      "prereq_hints": ["attention_scaling"]
+    },
+    {
+      "id": "f11",
+      "title": "Cross-entropy vs KL divergence equivalency",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "H(p,q) = H(p) + D_KL(p||q); training CE equals KL up to constant.",
+      "landmark_refs": ["Cover & Thomas, Elements of Information Theory"],
+      "prereq_hints": ["softmax"],
+      "backlog_slug": "ce_vs_kl"
+    },
+    {
+      "id": "f12",
+      "title": "Focal loss gradients under class imbalance",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "Modulating factor (1-p_t)^γ reshapes easy-example gradients.",
+      "landmark_refs": ["Lin et al., Focal Loss for Dense Object Detection, ICCV 2017"],
+      "prereq_hints": ["cross-entropy"],
+      "backlog_slug": "focal_loss"
+    },
+    {
+      "id": "f13",
+      "title": "Label smoothing as target entropy regularization",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "Soft targets change CE gradient; calibration tradeoffs.",
+      "landmark_refs": ["Szegedy et al., Rethinking the Inception Architecture, CVPR 2016"],
+      "prereq_hints": ["cross-entropy", "ce_vs_kl"]
+    },
+    {
+      "id": "f14",
+      "title": "Temperature scaling of logits",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "Softmax(z/T) controls peakiness; distillation and calibration link.",
+      "landmark_refs": ["Hinton et al., Distilling the Knowledge in a Neural Network, 2015", "Guo et al., On Calibration of Modern Neural Networks, ICML 2017"],
+      "prereq_hints": ["softmax"]
+    },
+    {
+      "id": "f15",
+      "title": "NLL, CE, and log-softmax numerically stable form",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "logsumexp trick; why naive CE overflows.",
+      "landmark_refs": ["PyTorch docs / standard numerical analysis"],
+      "prereq_hints": ["softmax", "cross-entropy"]
+    },
+    {
+      "id": "f16",
+      "title": "InfoNCE / contrastive loss derivation",
+      "category": "Loss Architectures",
+      "era": "foundation",
+      "why": "Lower bound on mutual information; CLIP-style training math.",
+      "landmark_refs": ["Oord et al., Representation Learning with Contrastive Predictive Coding, 2018"],
+      "prereq_hints": ["softmax", "ce_vs_kl"]
+    },
+    {
+      "id": "f17",
+      "title": "Adam first/second moment and bias correction",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Bias fix is the non-obvious part of Adam; interview staple.",
+      "landmark_refs": ["Kingma & Ba, Adam: A Method for Stochastic Optimization, ICLR 2015"],
+      "prereq_hints": ["SGD", "exponential moving averages"],
+      "backlog_slug": "rmsprop_adam"
+    },
+    {
+      "id": "f18",
+      "title": "RMSProp as adaptive second-moment SGD",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Bridge from AdaGrad to Adam; per-coordinate step sizes.",
+      "landmark_refs": ["Tieleman & Hinton, RMSProp (lecture notes), 2012"],
+      "prereq_hints": ["SGD"],
+      "backlog_slug": "rmsprop_adam"
+    },
+    {
+      "id": "f19",
+      "title": "Weight decay vs L2 regularization (SGD vs Adam)",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Decoupled decay ≠ L2 under adaptive methods.",
+      "landmark_refs": ["Loshchilov & Hutter, Decoupled Weight Decay Regularization, ICLR 2019"],
+      "prereq_hints": ["Adam"],
+      "backlog_slug": "weight_decay_vs_l2"
+    },
+    {
+      "id": "f20",
+      "title": "AdaGrad accumulator and diminishing steps",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Historical root of adaptive methods; why it stalls.",
+      "landmark_refs": ["Duchi et al., Adaptive Subgradient Methods, JMLR 2011"],
+      "prereq_hints": ["SGD"]
+    },
+    {
+      "id": "f21",
+      "title": "Learning-rate warmup and inverse-sqrt schedules",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Transformer training schedules; early instability math.",
+      "landmark_refs": ["Vaswani et al., Attention Is All You Need, NeurIPS 2017"],
+      "prereq_hints": ["Adam", "attention_scaling"]
+    },
+    {
+      "id": "f22",
+      "title": "Gradient clipping (global norm) effect on update",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "When and how clipping changes the effective step.",
+      "landmark_refs": ["Pascanu et al., On the difficulty of training RNNs, ICML 2013"],
+      "prereq_hints": ["backprop"]
+    },
+    {
+      "id": "f23",
+      "title": "Xavier / Glorot initialization variance",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Preserve activation variance forward and backward for tanh/sigmoid nets.",
+      "landmark_refs": ["Glorot & Bengio, Understanding the difficulty of training deep feedforward networks, AISTATS 2010"],
+      "prereq_hints": ["variance of linear layers"]
+    },
+    {
+      "id": "f24",
+      "title": "He / Kaiming initialization for ReLU",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "Half-rectifier correction to Glorot; modern CNN/LLM defaults.",
+      "landmark_refs": ["He et al., Delving Deep into Rectifiers, ICCV 2015"],
+      "prereq_hints": ["xavier", "ReLU"]
+    },
+    {
+      "id": "f25",
+      "title": "Dropout as Bernoulli expectation at train/eval",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Inverted dropout scaling; equivalence to geometric ensemble.",
+      "landmark_refs": ["Srivastava et al., Dropout, JMLR 2014"],
+      "prereq_hints": ["expectation"]
+    },
+    {
+      "id": "f26",
+      "title": "GELU / Swish derivative and smoothness",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Why smooth gates beat ReLU in transformers.",
+      "landmark_refs": ["Hendrycks & Gimpel, Gaussian Error Linear Units, 2016", "Ramachandran et al., Searching for Activation Functions, 2017"],
+      "prereq_hints": ["ReLU"]
+    },
+    {
+      "id": "f27",
+      "title": "SwiGLU and gated linear unit dynamics",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Gating + SiLU; parameter vs quality tradeoff in LLaMA-style FFNs.",
+      "landmark_refs": ["Shazeer, GLU Variants Improve Transformer, 2020"],
+      "prereq_hints": ["GELU/Swish"],
+      "backlog_slug": "swiglu"
+    },
+    {
+      "id": "f28",
+      "title": "RoPE multi-dimensional derivation",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Complex rotation encodes relative position in attention logits.",
+      "landmark_refs": ["Su et al., RoFormer: Enhanced Transformer with Rotary Position Embedding, 2021"],
+      "prereq_hints": ["attention_scaling", "complex numbers"],
+      "backlog_slug": "rope"
+    },
+    {
+      "id": "f29",
+      "title": "Sinusoidal absolute positional encodings",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Original transformer PE; linear attention of positions via sinusoids.",
+      "landmark_refs": ["Vaswani et al., Attention Is All You Need, NeurIPS 2017"],
+      "prereq_hints": ["attention"]
+    },
+    {
+      "id": "f30",
+      "title": "ALiBi attention bias",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Linear distance bias without learned PE; length extrapolation story.",
+      "landmark_refs": ["Press et al., Train Short, Test Long: Attention with Linear Biases, 2021"],
+      "prereq_hints": ["attention_scaling", "causal mask"]
+    },
+    {
+      "id": "f31",
+      "title": "KV-cache memory footprint scaling",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Bytes ∝ layers × batch × seq × heads × d_k × dtype; inference bottleneck.",
+      "landmark_refs": ["Pope et al., Efficiently Scaling Transformer Inference, 2022"],
+      "prereq_hints": ["multi-head attention"],
+      "backlog_slug": "kv_cache"
+    },
+    {
+      "id": "f32",
+      "title": "GQA / MQA memory–quality tradeoff math",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Shared KV heads shrink cache; derive FLOPs vs memory.",
+      "landmark_refs": ["Ainslie et al., GQA, 2023", "Shazeer, Multi-Query Attention, 2019"],
+      "prereq_hints": ["kv_cache", "multi-head attention"]
+    },
+    {
+      "id": "f33",
+      "title": "FlashAttention IO-awareness (high-level identity)",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Tiling softmax without materializing N²; HBM vs SRAM story.",
+      "landmark_refs": ["Dao et al., FlashAttention, NeurIPS 2022"],
+      "prereq_hints": ["softmax", "attention_scaling"]
+    },
+    {
+      "id": "f34",
+      "title": "Mixture-of-Experts routing load balance",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Gate softmax + auxiliary loss; capacity factor math.",
+      "landmark_refs": ["Shazeer et al., Outrageously Large Neural Networks (MoE), ICLR 2017"],
+      "prereq_hints": ["softmax"]
+    },
+    {
+      "id": "f35",
+      "title": "Speculative decoding acceptance probability",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Draft–verify speedup; when acceptance preserves target distribution.",
+      "landmark_refs": ["Leviathan et al., Fast Inference from Transformers via Speculative Decoding, ICML 2023"],
+      "prereq_hints": ["sampling", "KV cache"]
+    },
+    {
+      "id": "f36",
+      "title": "Top-k / top-p / temperature sampling identities",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "How truncation changes the induced distribution.",
+      "landmark_refs": ["Holtzman et al., The Curious Case of Neural Text Degeneration, ICLR 2020"],
+      "prereq_hints": ["softmax", "temperature"]
+    },
+    {
+      "id": "f37",
+      "title": "Beam search score normalization",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Length penalty; why raw log-prob prefers short strings.",
+      "landmark_refs": ["Wu et al., Google's NMT System, 2016"],
+      "prereq_hints": ["log-prob"]
+    },
+    {
+      "id": "f38",
+      "title": "Embedding matrix as tied input/output (weight tying)",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "Parameter count and inductive bias of tied softmax.",
+      "landmark_refs": ["Press & Wolf, Using the Output Embedding to Improve Language Models, 2017"],
+      "prereq_hints": ["softmax", "cross-entropy"]
+    },
+    {
+      "id": "f39",
+      "title": "Word2Vec skip-gram with negative sampling",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Classic contrastive-style objective before modern InfoNCE.",
+      "landmark_refs": ["Mikolov et al., Distributed Representations of Words and Phrases, NeurIPS 2013"],
+      "prereq_hints": ["softmax", "log-sigmoid"]
+    },
+    {
+      "id": "f40",
+      "title": "PCA as eigendecomposition of covariance",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Baseline linear dimensionality reduction every interview expects.",
+      "landmark_refs": ["Bishop, Pattern Recognition and Machine Learning"],
+      "prereq_hints": ["linear algebra"]
+    },
+    {
+      "id": "f41",
+      "title": "Bias–variance decomposition of MSE",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Classic generalization identity.",
+      "landmark_refs": ["Hastie, Tibshirani, Friedman, Elements of Statistical Learning"],
+      "prereq_hints": ["expectation", "variance"]
+    },
+    {
+      "id": "f42",
+      "title": "MLE for Gaussian and Bernoulli → MSE / CE",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Why common losses are maximum likelihood under simple noise models.",
+      "landmark_refs": ["Goodfellow et al., Deep Learning"],
+      "prereq_hints": ["probability"]
+    },
+    {
+      "id": "f43",
+      "title": "Backprop through a linear layer (matrix calculus)",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Shape rules for ∂L/∂W, ∂L/∂x; foundation for every module.",
+      "landmark_refs": ["Petersen & Pedersen, The Matrix Cookbook"],
+      "prereq_hints": ["chain rule"]
+    },
+    {
+      "id": "f44",
+      "title": "Convolution as Toeplitz / im2col matmul",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Connects CNN ops to linear algebra and FLOP counts.",
+      "landmark_refs": ["Dumoulin & Visin, A guide to convolution arithmetic for deep learning, 2016"],
+      "prereq_hints": ["linear layers"]
+    },
+    {
+      "id": "f45",
+      "title": "Batch matrix multiply and attention FLOP count",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "O(n² d) attention cost; ties theory to hardware budgets.",
+      "landmark_refs": ["Vaswani et al., 2017; Kaplan et al., Scaling Laws, 2020"],
+      "prereq_hints": ["attention_scaling"]
+    },
+    {
+      "id": "f46",
+      "title": "LoRA low-rank update math",
+      "category": "Modern Architecture",
+      "era": "foundation",
+      "why": "ΔW = BA; parameter and rank intuition for fine-tuning.",
+      "landmark_refs": ["Hu et al., LoRA, ICLR 2022"],
+      "prereq_hints": ["linear layers", "SVD intuition"]
+    },
+    {
+      "id": "f47",
+      "title": "μP / maximal update parametrization (sketch)",
+      "category": "Optimization",
+      "era": "foundation",
+      "why": "How width-scaling changes learning-rate transfer.",
+      "landmark_refs": ["Yang et al., Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer, 2022"],
+      "prereq_hints": ["initialization", "Adam"]
+    },
+    {
+      "id": "f48",
+      "title": "DDPM forward/reverse process (Gaussian Markov)",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Core diffusion math still high portfolio value.",
+      "landmark_refs": ["Ho et al., Denoising Diffusion Probabilistic Models, NeurIPS 2020"],
+      "prereq_hints": ["Gaussian", "ELBO intuition"]
+    },
+    {
+      "id": "f49",
+      "title": "Policy gradient / REINFORCE baseline identity",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "Bridge to RLHF-era interview questions without full RL product.",
+      "landmark_refs": ["Williams, Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning, 1992"],
+      "prereq_hints": ["expectation", "log-derivative trick"]
+    },
+    {
+      "id": "f50",
+      "title": "KL-regularized RL / reward model objective sketch",
+      "category": "Foundations",
+      "era": "foundation",
+      "why": "PPO/RLHF-style KL penalty intuition for LLM alignment posts.",
+      "landmark_refs": ["Schulman et al., PPO, 2017", "Ouyang et al., InstructGPT, 2022"],
+      "prereq_hints": ["policy gradient", "ce_vs_kl"]
+    }
+  ]
+}

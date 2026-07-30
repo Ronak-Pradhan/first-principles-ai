@@ -23,12 +23,21 @@ build/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# IDEs
+# IDEs / editor tooling (local only - not part of the public portfolio)
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 *~
+
+# Authoring process (local only - not the public portfolio)
+# backlog/ is public: needed by the weekly digest automation
+templates/
+backlog/OPS.md
+modules/**/research.md
+modules/**/drawing_outline.md
+modules/**/implementation_plan.md
 
 # macOS
 .DS_Store
