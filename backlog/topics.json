@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-29",
+  "updated": "2026-07-30",
   "topics": [
     {
       "id": "01",
@@ -161,6 +161,40 @@
       "module_path": null,
       "source": "manual",
       "notes": ""
+    },
+    {
+      "id": "11",
+      "slug": "qk_norm",
+      "title": "Query-Key Normalization (QK-Norm) vs 1/√d_k Scaling",
+      "category": "Modern Architecture",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://aclanthology.org/2020.findings-emnlp.379/",
+      "notes": "EMNLP 2020 Findings. L2-normalize Q,K then learnable scale; prereq attention_scaling shipped."
+    },
+    {
+      "id": "12",
+      "slug": "logit_soft_capping",
+      "title": "Logit Soft-Capping via soft_cap · tanh(logits / soft_cap)",
+      "category": "Modern Architecture",
+      "era": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "link": "https://arxiv.org/abs/2408.00118",
+      "notes": "Gemma 2 (Google DeepMind tech report). Bounds attention/final logits; builds on scaled-softmax saturation story."
     }
   ]
 }
