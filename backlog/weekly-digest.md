@@ -1,20 +1,107 @@
 # Weekly AI Math Digest
 
-_Placeholder. Overwritten by the Sunday automation (dual-track: foundation gaps + emerging)._
+Generated: YYYY-MM-DD
 
-## Suggested next module
+---
 
-_TBD_
+# Suggested Next Module
 
-## Foundation gaps
+## <Topic>
 
-_TBD - ranked uncovered items from `foundation_curriculum.json`._
+Overall Score:
 
-## Emerging
+Reason:
 
-_TBD - filtered candidates from arXiv / Hugging Face / lab blogs / X._
+Why this should be the next module.
 
-## Notes
+Prerequisites Satisfied
 
-- Papers With Code is discontinued - never used as a source.
-- Manual statuses in `topics.json` must not be wiped when merging new ideas.
+- ✅
+- ✅
+
+Unlocks
+
+- Module A
+- Module B
+- Module C
+
+Estimated Effort
+
+| Task | Hours |
+|------|------:|
+| Research | |
+| Drawing | |
+| Implementation | |
+| Blog | |
+| Total | |
+
+---
+
+# Foundation Gaps
+
+| Rank | Topic | Score | Why Now | Unlocks |
+|------|------:|--------|----------|----------|
+| 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
+| 4 | | | | |
+| 5 | | | | |
+
+---
+
+# Emerging Candidates
+
+| Topic | Domain | Score | Why Interesting | Blocked On |
+|--------|--------|------:|-----------------|------------|
+| | | | | |
+| | | | | |
+| | | | | |
+
+---
+
+# Blocked Candidates
+
+Topics worth revisiting after prerequisite modules are complete.
+
+| Topic | Waiting For |
+|--------|-------------|
+| | |
+| | |
+
+---
+
+# Rejected This Week
+
+Topics considered but intentionally rejected.
+
+| Topic | Reason |
+|--------|--------|
+| | |
+| | |
+
+---
+
+# Repository Coverage
+
+| Area | Coverage |
+|------|----------|
+| Transformer Core | |
+| Optimization | |
+| Loss Functions | |
+| Diffusion | |
+| Reinforcement Learning | |
+| Computer Vision | |
+| Representation Learning | |
+| Recommendation Systems | |
+| World Models | |
+| Audio / Speech | |
+| Graph ML | |
+| Quantitative Finance | |
+
+---
+
+# Notes
+
+- New topics merged into topics.json:
+- Existing topics skipped:
+- Sources unavailable:

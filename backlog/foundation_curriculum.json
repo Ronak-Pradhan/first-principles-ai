@@ -309,7 +309,8 @@
       "era": "foundation",
       "why": "Tiling softmax without materializing N²; HBM vs SRAM story.",
       "landmark_refs": ["Dao et al., FlashAttention, NeurIPS 2022"],
-      "prereq_hints": ["softmax", "attention_scaling"]
+      "prereq_hints": ["softmax", "attention_scaling"],
+      "backlog_slug": "flash_attention"
     },
     {
       "id": "f34",
@@ -426,7 +427,8 @@
       "era": "foundation",
       "why": "ΔW = BA; parameter and rank intuition for fine-tuning.",
       "landmark_refs": ["Hu et al., LoRA, ICLR 2022"],
-      "prereq_hints": ["linear layers", "SVD intuition"]
+      "prereq_hints": ["linear layers", "SVD intuition"],
+      "backlog_slug": "lora"
     },
     {
       "id": "f47",

@@ -1,13 +1,32 @@
 {
   "version": 1,
-  "updated": "2026-07-29",
+  "updated": "2026-07-31",
+  "interest_domains": [
+    "transformers_llms",
+    "vlms_multimodal",
+    "audio_speech_foundation",
+    "music_ai",
+    "agent_harness_tool_use",
+    "recommendation_systems",
+    "computer_vision",
+    "reasoning_models",
+    "world_models",
+    "evaluations_benchmarks_math",
+    "reinforcement_learning",
+    "continual_rl",
+    "embeddings_representation_learning",
+    "causal_inference",
+    "graph_ml",
+    "quantitative_finance",
+    "diffusion_generative"
+  ],
   "topics": [
     {
       "id": "01",
       "slug": "attention_scaling",
-      "title": "Attention Scaling Factor Variance Proof (1/√d_k)",
+      "title": "Attention Scaling Factor (1/√dₖ)",
       "category": "Transformer Core",
-      "era": "foundation",
+      "track": "foundation",
       "status": {
         "canvas": "completed",
         "github": "completed",
@@ -16,14 +35,15 @@
       },
       "module_path": "modules/01_attention_scaling",
       "source": "manual",
-      "notes": "Three-layer contract complete; portfolio blog in progress."
+      "notes": "",
+      "requires": []
     },
     {
       "id": "02",
       "slug": "softmax_jacobian",
-      "title": "Softmax Backpropagation & Full Jacobian Matrix Derivation",
+      "title": "Softmax Jacobian & Backpropagation",
       "category": "Transformer Core",
-      "era": "foundation",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -32,14 +52,17 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": [
+        "attention_scaling"
+      ]
     },
     {
       "id": "03",
-      "slug": "focal_loss",
-      "title": "Focal Loss Gradients (Handling Extreme Class Imbalance)",
-      "category": "Loss Architectures",
-      "era": "foundation",
+      "slug": "layernorm",
+      "title": "Layer Normalization",
+      "category": "Transformer Core",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -48,14 +71,15 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": []
     },
     {
       "id": "04",
-      "slug": "layernorm",
-      "title": "Layer Normalization Forward & Backward Pass",
+      "slug": "multi_head_attention",
+      "title": "Multi-Head Attention",
       "category": "Transformer Core",
-      "era": "foundation",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -64,14 +88,18 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "Critical bridge for modern attention mechanisms.",
+      "requires": [
+        "attention_scaling",
+        "softmax_jacobian"
+      ]
     },
     {
       "id": "05",
-      "slug": "ce_vs_kl",
-      "title": "Cross-Entropy vs KL-Divergence (Equivalency Proof)",
-      "category": "Loss Architectures",
-      "era": "foundation",
+      "slug": "rope",
+      "title": "Rotary Position Embeddings (RoPE)",
+      "category": "Modern Transformers",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -80,14 +108,17 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": [
+        "multi_head_attention"
+      ]
     },
     {
       "id": "06",
-      "slug": "weight_decay_vs_l2",
-      "title": "Weight Decay vs L2 Regularization (SGD vs Adam Dynamics)",
-      "category": "Optimization",
-      "era": "foundation",
+      "slug": "kv_cache",
+      "title": "KV Cache Memory Scaling",
+      "category": "Inference",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -96,14 +127,17 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": [
+        "multi_head_attention"
+      ]
     },
     {
       "id": "07",
-      "slug": "rmsprop_adam",
-      "title": "RMSProp & Adam Equations (First/Second Moment Bias Fix)",
-      "category": "Optimization",
-      "era": "foundation",
+      "slug": "flash_attention",
+      "title": "FlashAttention",
+      "category": "Inference",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -112,14 +146,20 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "Queued intentionally.",
+      "requires": [
+        "softmax_jacobian",
+        "multi_head_attention",
+        "kv_cache",
+        "rope"
+      ]
     },
     {
       "id": "08",
-      "slug": "rope",
-      "title": "Rotary Position Embeddings (RoPE) Multi-Dim Derivation",
-      "category": "Modern Architecture",
-      "era": "foundation",
+      "slug": "lora",
+      "title": "LoRA (Low-Rank Adaptation)",
+      "category": "Fine-Tuning",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -128,14 +168,15 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": []
     },
     {
       "id": "09",
       "slug": "swiglu",
-      "title": "SwiGLU Activation Function & Gated Linear Unit Dynamics",
-      "category": "Modern Architecture",
-      "era": "foundation",
+      "title": "SwiGLU",
+      "category": "Transformer Blocks",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -144,14 +185,17 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": [
+        "layernorm"
+      ]
     },
     {
       "id": "10",
-      "slug": "kv_cache",
-      "title": "KV-Cache Memory Footprint Scaling Equation",
-      "category": "Modern Architecture",
-      "era": "foundation",
+      "slug": "cross_entropy_vs_kl",
+      "title": "Cross Entropy vs KL Divergence",
+      "category": "Loss Functions",
+      "track": "foundation",
       "status": {
         "canvas": "todo",
         "github": "todo",
@@ -160,7 +204,99 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": ""
+      "notes": "",
+      "requires": []
+    },
+    {
+      "id": "11",
+      "slug": "focal_loss",
+      "title": "Focal Loss",
+      "category": "Loss Functions",
+      "track": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": "",
+      "requires": [
+        "cross_entropy_vs_kl"
+      ]
+    },
+    {
+      "id": "12",
+      "slug": "adam_optimizer",
+      "title": "Adam from First Principles",
+      "category": "Optimization",
+      "track": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": "Derive SGD → Momentum → RMSProp → Adam in one module.",
+      "requires": []
+    },
+    {
+      "id": "13",
+      "slug": "weight_decay_vs_l2",
+      "title": "Weight Decay vs L2 Regularization",
+      "category": "Optimization",
+      "track": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": "",
+      "requires": [
+        "adam_optimizer"
+      ]
+    },
+    {
+      "id": "14",
+      "slug": "info_nce",
+      "title": "InfoNCE Contrastive Loss",
+      "category": "Representation Learning",
+      "track": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": "Unlocks embeddings, CLIP and retrieval.",
+      "requires": [
+        "cross_entropy_vs_kl"
+      ]
+    },
+    {
+      "id": "15",
+      "slug": "ddpm_forward_process",
+      "title": "Diffusion Forward Process (DDPM)",
+      "category": "Diffusion",
+      "track": "foundation",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "manual",
+      "notes": "Foundation for diffusion models.",
+      "requires": []
     }
   ]
 }
