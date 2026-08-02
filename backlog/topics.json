@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-31",
+  "updated": "2026-08-02",
   "interest_domains": [
     "transformers_llms",
     "vlms_multimodal",
@@ -296,6 +296,93 @@
       "module_path": null,
       "source": "manual",
       "notes": "Foundation for diffusion models.",
+      "requires": []
+    },
+    {
+      "id": "16",
+      "slug": "qk_norm",
+      "title": "Query-Key Normalization (QK-Norm)",
+      "category": "Modern Transformers",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "notes": "Normalize Q/K before attention logits, then apply a learnable scale. Modern LLM/ViT stability mechanism complementary to fixed 1/√dₖ.",
+      "requires": [
+        "attention_scaling"
+      ]
+    },
+    {
+      "id": "17",
+      "slug": "flow_matching",
+      "title": "Flow Matching",
+      "category": "Diffusion",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "notes": "Learn an ODE velocity field on linear interpolants between noise and data. Complements DDPM; unlocks rectified-flow style generative sampling.",
+      "requires": []
+    },
+    {
+      "id": "18",
+      "slug": "message_passing",
+      "title": "Message Passing Aggregation",
+      "category": "Graph ML",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "notes": "Neighborhood aggregate-then-update identity underlying GCNs/MPNNs. First Graph ML bridge; unlocks GAT and graph SSL mechanisms later.",
+      "requires": []
+    },
+    {
+      "id": "19",
+      "slug": "ctc_loss",
+      "title": "CTC Loss (Forward-Backward)",
+      "category": "Audio / Speech",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "notes": "Connectionist Temporal Classification via dynamic-programming forward-backward over blank-augmented alignments. First Audio/Speech bridge; ASR interview staple.",
+      "requires": []
+    },
+    {
+      "id": "20",
+      "slug": "two_tower_retrieval",
+      "title": "Two-Tower Dual-Encoder Retrieval",
+      "category": "Recommendation Systems",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "weekly-digest-2026-W31",
+      "notes": "Independent user/item encoders with temperature-scaled dot-product retrieval and in-batch softmax. First RecSys bridge; pairs naturally with InfoNCE later.",
       "requires": []
     }
   ]
