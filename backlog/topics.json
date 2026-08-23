@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-31",
+  "updated": "2026-08-23",
   "interest_domains": [
     "transformers_llms",
     "vlms_multimodal",
@@ -297,6 +297,248 @@
       "source": "manual",
       "notes": "Foundation for diffusion models.",
       "requires": []
+    },
+    {
+      "id": "16",
+      "slug": "qk_norm",
+      "title": "Query-Key Normalization",
+      "category": "Transformer Core",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Normalize Q/K before dot-products to control attention logit variance; complements 1/√d_k.",
+      "requires": [
+        "attention_scaling"
+      ],
+      "score": 34,
+      "confidence": "High",
+      "domain": "transformers_llms"
+    },
+    {
+      "id": "17",
+      "slug": "elbo_variational_bound",
+      "title": "ELBO Variational Bound",
+      "category": "Generative Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Derive log p(x) ≥ ELBO; missing bridge into VAEs and DDPM.",
+      "requires": [],
+      "score": 37,
+      "confidence": "High",
+      "domain": "diffusion_generative"
+    },
+    {
+      "id": "18",
+      "slug": "flow_matching",
+      "title": "Flow Matching",
+      "category": "Diffusion",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Regress a vector field transporting noise to data; pairs with DDPM without duplicating it.",
+      "requires": [],
+      "score": 35,
+      "confidence": "High",
+      "domain": "diffusion_generative"
+    },
+    {
+      "id": "19",
+      "slug": "gumbel_softmax",
+      "title": "Gumbel-Softmax Relaxation",
+      "category": "Sampling",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Gumbel-Max trick plus temperature softmax for differentiable categorical samples.",
+      "requires": [],
+      "score": 35,
+      "confidence": "High",
+      "domain": "embeddings_representation_learning"
+    },
+    {
+      "id": "20",
+      "slug": "message_passing",
+      "title": "Graph Message Passing",
+      "category": "Graph ML",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Aggregate-update identity over neighborhoods; Graph ML spine.",
+      "requires": [],
+      "score": 34,
+      "confidence": "High",
+      "domain": "graph_ml"
+    },
+    {
+      "id": "21",
+      "slug": "ctc_loss",
+      "title": "CTC Loss Forward-Backward",
+      "category": "Audio / Speech",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Sum over alignments with forward-backward DP; ASR interview staple.",
+      "requires": [],
+      "score": 34,
+      "confidence": "High",
+      "domain": "audio_speech_foundation"
+    },
+    {
+      "id": "22",
+      "slug": "two_tower_retrieval",
+      "title": "Two-Tower Retrieval",
+      "category": "Recommendation Systems",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Dual encoders with in-batch softmax retrieval objective.",
+      "requires": [],
+      "score": 34,
+      "confidence": "High",
+      "domain": "recommendation_systems"
+    },
+    {
+      "id": "23",
+      "slug": "vit_patch_embedding",
+      "title": "ViT Patch Embedding",
+      "category": "Computer Vision",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Patchify equals Conv2d with kernel=stride=P; Vision transformer entry point.",
+      "requires": [],
+      "score": 34,
+      "confidence": "High",
+      "domain": "computer_vision"
+    },
+    {
+      "id": "24",
+      "slug": "inverse_propensity_weighting",
+      "title": "Inverse Propensity Weighting",
+      "category": "Causal Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Horvitz-Thompson ATE via inverse propensity scores.",
+      "requires": [],
+      "score": 34,
+      "confidence": "High",
+      "domain": "causal_inference"
+    },
+    {
+      "id": "25",
+      "slug": "jepa_predictive_objective",
+      "title": "JEPA Predictive Objective",
+      "category": "World Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Predict latent targets across views; world-model entry without pixel reconstruction.",
+      "requires": [],
+      "score": 33,
+      "confidence": "Medium",
+      "domain": "world_models"
+    },
+    {
+      "id": "26",
+      "slug": "black_scholes_pde",
+      "title": "Black-Scholes PDE",
+      "category": "Quantitative Finance",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Replication argument + Itô lemma to PDE; closed form and Monte Carlo check.",
+      "requires": [],
+      "score": 33,
+      "confidence": "Medium",
+      "domain": "quantitative_finance"
+    },
+    {
+      "id": "27",
+      "slug": "sinkhorn_optimal_transport",
+      "title": "Sinkhorn Optimal Transport",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Entropic OT via Sinkhorn matrix scaling; bridge to matching and Wasserstein objectives.",
+      "requires": [],
+      "score": 32,
+      "confidence": "Medium",
+      "domain": "embeddings_representation_learning"
     }
   ]
 }
