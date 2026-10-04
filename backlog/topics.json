@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-31",
+  "updated": "2026-10-04",
   "interest_domains": [
     "transformers_llms",
     "vlms_multimodal",
@@ -24,7 +24,7 @@
     {
       "id": "01",
       "slug": "attention_scaling",
-      "title": "Attention Scaling Factor (1/√dₖ)",
+      "title": "Attention Scaling Factor (1/\u221ad\u2096)",
       "category": "Transformer Core",
       "track": "foundation",
       "status": {
@@ -240,7 +240,7 @@
       },
       "module_path": null,
       "source": "manual",
-      "notes": "Derive SGD → Momentum → RMSProp → Adam in one module.",
+      "notes": "Derive SGD \u2192 Momentum \u2192 RMSProp \u2192 Adam in one module.",
       "requires": []
     },
     {
@@ -296,6 +296,1030 @@
       "module_path": null,
       "source": "manual",
       "notes": "Foundation for diffusion models.",
+      "requires": []
+    },
+    {
+      "id": "16",
+      "slug": "qk_norm",
+      "title": "Query-Key Normalization",
+      "category": "Modern Transformers",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Normalize Q and K vectors before attention logits; stabilizes large-dot-product regimes.",
+      "requires": [
+        "attention_scaling"
+      ]
+    },
+    {
+      "id": "17",
+      "slug": "elbo_variational_bound",
+      "title": "ELBO Variational Bound",
+      "category": "Generative Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Derive log p(x) \u2265 ELBO via KL non-negativity; bridge to VAEs and diffusion ELBOs.",
+      "requires": []
+    },
+    {
+      "id": "18",
+      "slug": "flow_matching",
+      "title": "Flow Matching",
+      "category": "Diffusion",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Conditional vector-field regression for continuous normalizing flows.",
+      "requires": []
+    },
+    {
+      "id": "19",
+      "slug": "score_matching",
+      "title": "Score Matching",
+      "category": "Diffusion",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Denoising score matching equates score estimation to noise prediction.",
+      "requires": []
+    },
+    {
+      "id": "20",
+      "slug": "gumbel_softmax",
+      "title": "Gumbel-Softmax Reparameterization",
+      "category": "Discrete Latents",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Gumbel noise + temperature softmax for differentiable categorical samples.",
+      "requires": []
+    },
+    {
+      "id": "21",
+      "slug": "message_passing",
+      "title": "Graph Message Passing",
+      "category": "Graph ML",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Aggregate-update neighborhood operator underlying GNNs.",
+      "requires": []
+    },
+    {
+      "id": "22",
+      "slug": "ctc_loss",
+      "title": "CTC Loss",
+      "category": "Sequence Losses",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Sum over alignments with blank tokens via forward-backward DP.",
+      "requires": []
+    },
+    {
+      "id": "23",
+      "slug": "two_tower_retrieval",
+      "title": "Two-Tower Retrieval",
+      "category": "Recommendation Systems",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Independent query/item encoders with similarity scoring in a shared space.",
+      "requires": []
+    },
+    {
+      "id": "24",
+      "slug": "vit_patch_embedding",
+      "title": "ViT Patch Embedding",
+      "category": "Computer Vision",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Image patchify plus linear projection as vision tokenization.",
+      "requires": []
+    },
+    {
+      "id": "25",
+      "slug": "inverse_propensity_weighting",
+      "title": "Inverse Propensity Weighting",
+      "category": "Causal Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Reweight observed outcomes by 1/e(x) to debias selection.",
+      "requires": []
+    },
+    {
+      "id": "26",
+      "slug": "jepa_predictive_objective",
+      "title": "JEPA Predictive Objective",
+      "category": "World Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Predict target embeddings from context embeddings without pixel reconstruction.",
+      "requires": []
+    },
+    {
+      "id": "27",
+      "slug": "black_scholes_pde",
+      "title": "Black-Scholes PDE",
+      "category": "Quantitative Finance",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Derive the option PDE from Ito hedge portfolio arguments.",
+      "requires": []
+    },
+    {
+      "id": "28",
+      "slug": "sinkhorn_optimal_transport",
+      "title": "Sinkhorn Optimal Transport",
+      "category": "Optimal Transport",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Entropic OT via iterative row/column normalization.",
+      "requires": []
+    },
+    {
+      "id": "29",
+      "slug": "bpr_ranking_loss",
+      "title": "BPR Ranking Loss",
+      "category": "Recommendation Systems",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Bayesian Personalized Ranking pairwise logistic objective for implicit feedback.",
+      "requires": []
+    },
+    {
+      "id": "30",
+      "slug": "kalman_filter",
+      "title": "Kalman Filter",
+      "category": "State Estimation",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Gaussian predict-update recursion for linear dynamical systems.",
+      "requires": []
+    },
+    {
+      "id": "31",
+      "slug": "short_time_fourier_transform",
+      "title": "Short-Time Fourier Transform",
+      "category": "Audio / Speech",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Windowed DFT overlap-add analysis/synthesis; front door to spectrogram features.",
+      "requires": []
+    },
+    {
+      "id": "32",
+      "slug": "mel_filterbank",
+      "title": "Mel Filterbank",
+      "category": "Audio / Speech",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Mel-scale triangular filter integration over STFT magnitudes.",
+      "requires": [
+        "short_time_fourier_transform"
+      ]
+    },
+    {
+      "id": "33",
+      "slug": "vicreg",
+      "title": "VICReg",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Variance, invariance, and covariance regularization against representation collapse.",
+      "requires": []
+    },
+    {
+      "id": "34",
+      "slug": "log_derivative_trick",
+      "title": "Log-Derivative Trick",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "\u2207_\u03b8 E_{p_\u03b8}[f] = E_{p_\u03b8}[f \u2207_\u03b8 log p_\u03b8]; gateway to REINFORCE.",
+      "requires": []
+    },
+    {
+      "id": "35",
+      "slug": "importance_sampling",
+      "title": "Importance Sampling",
+      "category": "Monte Carlo Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Change-of-measure estimator E_p[f] = E_q[f p/q] with weight diagnostics.",
+      "requires": []
+    },
+    {
+      "id": "36",
+      "slug": "gaussian_mixture_em",
+      "title": "Gaussian Mixture EM",
+      "category": "Foundations",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Expectation-Maximization for Gaussian mixtures: responsibilities then closed-form M-step.",
+      "requires": []
+    },
+    {
+      "id": "37",
+      "slug": "barlow_twins",
+      "title": "Barlow Twins",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Cross-correlation matrix redundancy reduction without explicit negatives.",
+      "requires": []
+    },
+    {
+      "id": "38",
+      "slug": "reparameterization_trick",
+      "title": "Reparameterization Trick",
+      "category": "Generative Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Pathwise Gaussian reparameterization z = \u03bc + \u03c3 \u2299 \u03b5 enables low-variance ELBO gradients.",
+      "requires": []
+    },
+    {
+      "id": "39",
+      "slug": "bellman_expectation",
+      "title": "Bellman Expectation",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "V^\u03c0 = R + \u03b3 P^\u03c0 V^\u03c0 recursive identity; foundation for TD and DP methods.",
+      "requires": []
+    },
+    {
+      "id": "40",
+      "slug": "natural_gradient",
+      "title": "Natural Gradient",
+      "category": "Optimization",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Fisher-information preconditioned update; information-geometry step invariant to reparameterization.",
+      "requires": []
+    },
+    {
+      "id": "41",
+      "slug": "hutchinson_trace_estimator",
+      "title": "Hutchinson Trace Estimator",
+      "category": "Numerical Linear Algebra",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Unbiased stochastic trace via Rademacher/Gaussian probes; used in Neural ODE densities and curvature estimates.",
+      "requires": []
+    },
+    {
+      "id": "42",
+      "slug": "spectral_normalization",
+      "title": "Spectral Normalization",
+      "category": "Computer Vision",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Power-iteration estimate of \u03c3_max(W) to constrain Lipschitz constant of layers.",
+      "requires": []
+    },
+    {
+      "id": "43",
+      "slug": "byol_bootstrap",
+      "title": "BYOL Bootstrap Target",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Online predictor aligned to EMA target network without negatives; asymmetric bootstrap SSL.",
+      "requires": []
+    },
+    {
+      "id": "44",
+      "slug": "conformal_prediction",
+      "title": "Split Conformal Prediction",
+      "category": "Uncertainty Quantification",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Finite-sample marginal coverage via exchangeability and calibration quantiles; distribution-free prediction sets.",
+      "requires": []
+    },
+    {
+      "id": "45",
+      "slug": "ito_lemma",
+      "title": "It\u00f4's Lemma",
+      "category": "Quantitative Finance",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Second-order Taylor correction for It\u00f4 processes; bridge from Brownian motion to Black-Scholes and continuous-time diffusion SDEs.",
+      "requires": []
+    },
+    {
+      "id": "46",
+      "slug": "temporal_difference_learning",
+      "title": "Temporal-Difference Learning (TD(0))",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Bootstrap value updates \u03b4 = r + \u03b3V(s') - V(s); online bridge from Bellman expectation to practical RL algorithms.",
+      "requires": [
+        "bellman_expectation"
+      ]
+    },
+    {
+      "id": "47",
+      "slug": "advantage_function",
+      "title": "Advantage Function A(s,a)",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "A(s,a) = Q(s,a) - V(s) as a baseline-centered action preference; core identity for actor-critic and policy-gradient variance reduction.",
+      "requires": [
+        "bellman_expectation"
+      ]
+    },
+    {
+      "id": "48",
+      "slug": "wasserstein_distance",
+      "title": "Wasserstein Distance",
+      "category": "Optimal Transport",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Earth-mover / Kantorovich formulation of W_p; closed-form 1D case and dual (KR) perspective before entropic Sinkhorn.",
+      "requires": []
+    },
+    {
+      "id": "49",
+      "slug": "backdoor_adjustment",
+      "title": "Backdoor Adjustment",
+      "category": "Causal Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "do-calculus identification P(y|do(x)) = \u03a3_z P(y|x,z)P(z) when Z blocks all backdoor paths; complements IPW.",
+      "requires": []
+    },
+    {
+      "id": "50",
+      "slug": "fourier_feature_mapping",
+      "title": "Fourier Feature Mapping",
+      "category": "Computer Vision",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Random Fourier features \u03b3(v) = [sin(2\u03c0Bv), cos(2\u03c0Bv)] enabling high-frequency fitting in NeRF-style coordinate networks.",
+      "requires": []
+    },
+    {
+      "id": "51",
+      "slug": "gae_generalized_advantage",
+      "title": "Generalized Advantage Estimation",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Exponentially weighted TD residual sum \u00c2_t^{GAE(\u03b3,\u03bb)}; bias-variance dial between Monte Carlo returns and one-step TD.",
+      "requires": [
+        "temporal_difference_learning",
+        "advantage_function"
+      ]
+    },
+    {
+      "id": "52",
+      "slug": "group_relative_advantage",
+      "title": "Group-Relative Advantage Whitening",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Within-group reward whitening \u00c2_i=(r_i-\u03bc_G)/(\u03c3_G+\u03b5); critic-free baseline used by GRPO-style updates.",
+      "requires": [
+        "advantage_function"
+      ]
+    },
+    {
+      "id": "53",
+      "slug": "langevin_dynamics",
+      "title": "Langevin Dynamics Sampling",
+      "category": "Monte Carlo Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Score-driven SDE dx = (1/2)\u2207log p(x) dt + dW; Euler discretization bridges MCMC and score-based generative sampling.",
+      "requires": [
+        "score_matching"
+      ]
+    },
+    {
+      "id": "54",
+      "slug": "metropolis_hastings",
+      "title": "Metropolis-Hastings Accept-Reject",
+      "category": "Monte Carlo Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Detailed-balance accept probability min(1, \u03c0(x')q(x|x')/(\u03c0(x)q(x'|x))); exact stationary correction for MCMC proposals including MALA.",
+      "requires": []
+    },
+    {
+      "id": "55",
+      "slug": "control_variates",
+      "title": "Control Variates for Variance Reduction",
+      "category": "Monte Carlo Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Estimator X - \u03b2(Y - E[Y]) with optimal \u03b2 = Cov(X,Y)/Var(Y); foundational variance-reduction identity for REINFORCE baselines and MC integration.",
+      "requires": []
+    },
+    {
+      "id": "56",
+      "slug": "polyak_averaging",
+      "title": "Polyak Averaging (Parameter EMA)",
+      "category": "Optimization",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "\u03b8\u0304 \u2190 \u03c4\u03b8\u0304 + (1-\u03c4)\u03b8; Polyak-Ruppert / EMA teacher weights used in BYOL, SWA, and diffusion samplers.",
+      "requires": []
+    },
+    {
+      "id": "57",
+      "slug": "front_door_adjustment",
+      "title": "Front-Door Adjustment",
+      "category": "Causal Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Identify P(y|do(t)) via mediator set Z that intercepts all directed paths when back-door is blocked; Pearl front-door formula.",
+      "requires": [
+        "backdoor_adjustment"
+      ]
+    },
+    {
+      "id": "58",
+      "slug": "graph_laplacian",
+      "title": "Graph Laplacian Spectral Smoothing",
+      "category": "Graph ML",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "L = D - A (or normalized \u0128 - D^{-1/2}AD^{-1/2}); quadratic form x\u1d40Lx measures smoothness and seeds spectral GNNs.",
+      "requires": []
+    },
+    {
+      "id": "59",
+      "slug": "film_conditioning",
+      "title": "Feature-wise Linear Modulation (FiLM)",
+      "category": "Computer Vision",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Affine feature conditioning \u03b3(z)\u2299x + \u03b2(z); general conditional normalization mechanism for multimodal and diffusion conditioning.",
+      "requires": []
+    },
+    {
+      "id": "60",
+      "slug": "ppo_clipped_surrogate",
+      "title": "PPO Clipped Surrogate Objective",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "L = E[min(\u03c1\u00c2, clip(\u03c1, 1-\u03b5, 1+\u03b5)\u00c2)] with \u03c1=\u03c0/\u03c0_old; trust-region style policy update without hard KL projection.",
+      "requires": [
+        "advantage_function",
+        "log_derivative_trick"
+      ]
+    },
+    {
+      "id": "61",
+      "slug": "maximum_mean_discrepancy",
+      "title": "Maximum Mean Discrepancy",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Kernel two-sample distance ||\u03bc_P - \u03bc_Q||_H; unbiased U-statistic estimator used in generative training and domain adaptation.",
+      "requires": []
+    },
+    {
+      "id": "62",
+      "slug": "sparse_dictionary_learning",
+      "title": "Sparse Dictionary Learning",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "min ||X - DA||_F^2 + \u03bb||A||_1 with unit-norm atoms; classical sparse coding objective behind modern sparse autoencoder feature decomposition.",
+      "requires": []
+    },
+    {
+      "id": "63",
+      "slug": "bradley_terry_preference",
+      "title": "Bradley-Terry Preference Model",
+      "category": "Preference Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Pairwise preference probability via sigmoid of reward differences; foundation for RLHF/DPO.",
+      "requires": []
+    },
+    {
+      "id": "64",
+      "slug": "direct_preference_optimization",
+      "title": "Direct Preference Optimization",
+      "category": "Preference Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Reparameterize KL-constrained reward optimum into a BT preference loss over policies; Z(x) cancels.",
+      "requires": [
+        "bradley_terry_preference",
+        "cross_entropy_vs_kl"
+      ]
+    },
+    {
+      "id": "65",
+      "slug": "rejection_sampling",
+      "title": "Rejection Sampling",
+      "category": "Monte Carlo",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Accept/reject draws from proposal q with envelope M; exact samples from target density.",
+      "requires": []
+    },
+    {
+      "id": "66",
+      "slug": "alternating_least_squares",
+      "title": "Alternating Least Squares Matrix Factorization",
+      "category": "Recommendation Systems",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Biconvex MF via closed-form ridge updates alternating over user and item factors.",
+      "requires": []
+    },
+    {
+      "id": "67",
+      "slug": "f_divergence",
+      "title": "f-Divergence Family",
+      "category": "Information Theory",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Unify KL, reverse KL, JS, and alpha-divergences via convex generator f; variational forms.",
+      "requires": [
+        "cross_entropy_vs_kl"
+      ]
+    },
+    {
+      "id": "68",
+      "slug": "entropy_regularized_rl",
+      "title": "Entropy-Regularized Policy Objective",
+      "category": "Reinforcement Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "MaxEnt soft optimality: pi* proportional to exp(Q/alpha); soft Bellman backup identity.",
+      "requires": [
+        "log_derivative_trick",
+        "bellman_expectation"
+      ]
+    },
+    {
+      "id": "69",
+      "slug": "hamiltonian_monte_carlo",
+      "title": "Hamiltonian Monte Carlo",
+      "category": "Monte Carlo",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Hamiltonian dynamics with leapfrog integrator and Metropolis accept/reject for gradient-informed MCMC.",
+      "requires": [
+        "metropolis_hastings",
+        "langevin_dynamics"
+      ]
+    },
+    {
+      "id": "70",
+      "slug": "modern_hopfield_energy",
+      "title": "Modern Hopfield Energy Retrieval",
+      "category": "Associative Memory",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Continuous Hopfield energy whose update recovers softmax attention over stored patterns.",
+      "requires": [
+        "softmax_jacobian"
+      ]
+    },
+    {
+      "id": "71",
+      "slug": "rssm_variational_bound",
+      "title": "RSSM Variational Bound",
+      "category": "World Models",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Recurrent state-space model ELBO with deterministic recurrent state and stochastic latent prior/posterior.",
+      "requires": [
+        "elbo_variational_bound",
+        "reparameterization_trick"
+      ]
+    },
+    {
+      "id": "72",
+      "slug": "causal_mediation_effects",
+      "title": "Natural Direct and Indirect Effects",
+      "category": "Causal Inference",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Mediation decomposition of total effect into natural direct and indirect path effects.",
+      "requires": [
+        "backdoor_adjustment"
+      ]
+    },
+    {
+      "id": "73",
+      "slug": "canonical_correlation_analysis",
+      "title": "Canonical Correlation Analysis",
+      "category": "Representation Learning",
+      "track": "emerging",
+      "status": {
+        "canvas": "todo",
+        "github": "todo",
+        "blog": "todo",
+        "research": "todo"
+      },
+      "module_path": null,
+      "source": "emerging",
+      "notes": "Maximize correlation of linear projections of two views; eigendecomposition of cross-covariance.",
       "requires": []
     }
   ]
